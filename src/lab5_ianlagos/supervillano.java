@@ -12,13 +12,23 @@ package lab5_ianlagos;
 public class supervillano extends info_general{
     protected String encarcelado;
     protected int casualties;
+    protected int nivel_poder;
 
-    public supervillano(String encarcelado, int casualties, String nombre, int edad, String planeta_origen, double altura) {
+    public supervillano(String encarcelado, int casualties, int nivel_poder, String nombre, int edad, String planeta_origen, double altura) {
         super(nombre, edad, planeta_origen, altura);
         this.encarcelado = encarcelado;
         this.casualties = casualties;
+        this.nivel_poder = nivel_poder;
+    }
+    
+    
+    public int getNivel_poder() {
+        return nivel_poder;
     }
 
+    public void setNivel_poder(int nivel_poder) {
+        this.nivel_poder = nivel_poder;
+    }
     public String getEncarcelado() {
         return encarcelado;
     }
