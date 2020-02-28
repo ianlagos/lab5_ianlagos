@@ -32,8 +32,6 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jd_SuperHeroes = new javax.swing.JDialog();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jl_super = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,10 +40,12 @@ public class Principal extends javax.swing.JFrame {
         tf_edad_super = new javax.swing.JTextField();
         tf_planta_super = new javax.swing.JTextField();
         tf_villanos_encarcelados = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jb_agregar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         tf_altura_super = new javax.swing.JTextField();
-        jd_SuperVillanos = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        sp_poder = new javax.swing.JSpinner();
+        jb_regresar_super = new javax.swing.JToggleButton();
         jd_Carcel = new javax.swing.JDialog();
         jd_escape = new javax.swing.JDialog();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -53,9 +53,8 @@ public class Principal extends javax.swing.JFrame {
         jToggleButton3 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
 
-        jd_SuperHeroes.setMinimumSize(new java.awt.Dimension(500, 450));
-
-        jScrollPane1.setViewportView(jl_super);
+        jd_SuperHeroes.setMinimumSize(new java.awt.Dimension(600, 400));
+        jd_SuperHeroes.setPreferredSize(new java.awt.Dimension(700, 400));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Nombre");
@@ -69,91 +68,97 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Villanos encarcelados");
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Agregar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_agregar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_agregar.setText("Agregar");
+        jb_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jb_agregarMouseClicked(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Altura");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Nivel Poder");
+
+        sp_poder.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+
+        jb_regresar_super.setText("Regresar");
+        jb_regresar_super.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_regresar_superMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_SuperHeroesLayout = new javax.swing.GroupLayout(jd_SuperHeroes.getContentPane());
         jd_SuperHeroes.getContentPane().setLayout(jd_SuperHeroesLayout);
         jd_SuperHeroesLayout.setHorizontalGroup(
             jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
                                 .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_nombre_super, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_edad_super, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
-                                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tf_nombre_super, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tf_edad_super, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(tf_planta_super)
                                     .addComponent(tf_villanos_encarcelados)
-                                    .addComponent(tf_altura_super, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)))))
+                                    .addComponent(tf_altura_super, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel5))
+                        .addGap(27, 27, 27))
                     .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jb_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(256, 256, 256)))
+                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_regresar_super)
                     .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(sp_poder, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jd_SuperHeroesLayout.setVerticalGroup(
             jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_SuperHeroesLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(28, 28, 28)
+                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(tf_nombre_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addGroup(jd_SuperHeroesLayout.createSequentialGroup()
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_nombre_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(sp_poder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_edad_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(24, 24, 24)
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_planta_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(23, 23, 23)
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_villanos_encarcelados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(20, 20, 20)
+                        .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_altura_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tf_edad_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tf_planta_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tf_villanos_encarcelados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jd_SuperHeroesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(tf_altura_super, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jd_SuperVillanosLayout = new javax.swing.GroupLayout(jd_SuperVillanos.getContentPane());
-        jd_SuperVillanos.getContentPane().setLayout(jd_SuperVillanosLayout);
-        jd_SuperVillanosLayout.setHorizontalGroup(
-            jd_SuperVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jd_SuperVillanosLayout.setVerticalGroup(
-            jd_SuperVillanosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+                    .addComponent(jb_agregar)
+                    .addComponent(jb_regresar_super))
+                .addGap(93, 93, 93))
         );
 
         javax.swing.GroupLayout jd_CarcelLayout = new javax.swing.GroupLayout(jd_Carcel.getContentPane());
@@ -213,7 +218,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jToggleButton2))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +231,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton3)
                     .addComponent(jButton1))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -241,19 +246,28 @@ public class Principal extends javax.swing.JFrame {
         jd_SuperHeroes.setLocationRelativeTo(this);
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jb_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarMouseClicked
         // TODO add your handling code here:
-        DefaultListModel modelo= (DefaultListModel) jl_super.getModel();
-        Heroes.add(new super_heroes(Integer.parseInt(tf_villanos_encarcelados.getText()),tf_nombre_super.getText(), Integer.parseInt(tf_edad_super.getText()), tf_planta_super.getText(),Double.parseDouble(tf_altura_super.getText())));
+        
+        Heroes.add(new super_heroes(Integer.parseInt(tf_villanos_encarcelados.getText()), (Integer) sp_poder.getValue(), tf_nombre_super.getText(), Integer.parseInt(tf_edad_super.getText()), tf_planta_super.getText(), Double.parseDouble(tf_altura_super.getText())));
+        Todos.add(Heroes);
         //
-        jl_super.setModel(modelo);
+        sp_poder.setValue(0);
         tf_villanos_encarcelados.setText("");
         tf_nombre_super.setText("");
         tf_edad_super.setText("");
         tf_altura_super.setText("");
         tf_planta_super.setText("");
         
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jb_agregarMouseClicked
+
+    private void jb_regresar_superMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresar_superMouseClicked
+        // TODO add your handling code here:
+        jd_SuperHeroes.setVisible(false);
+        dispose();
+        Principal p2 = new Principal();
+        p2.setVisible(true);
+    }//GEN-LAST:event_jb_regresar_superMouseClicked
 
     /**
      * @param args the command line arguments
@@ -292,21 +306,21 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JButton jb_agregar;
+    private javax.swing.JToggleButton jb_regresar_super;
     private javax.swing.JDialog jd_Carcel;
     private javax.swing.JDialog jd_SuperHeroes;
-    private javax.swing.JDialog jd_SuperVillanos;
     private javax.swing.JDialog jd_escape;
-    private javax.swing.JList<String> jl_super;
+    private javax.swing.JSpinner sp_poder;
     private javax.swing.JTextField tf_altura_super;
     private javax.swing.JTextField tf_edad_super;
     private javax.swing.JTextField tf_nombre_super;
@@ -315,4 +329,5 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<super_heroes> Heroes = new ArrayList();
     ArrayList<supervillano> Villanos = new ArrayList();
+    ArrayList Todos = new ArrayList();
 }
