@@ -64,8 +64,14 @@ public class Principal extends javax.swing.JFrame {
         jb_agregar_V = new javax.swing.JToggleButton();
         jb_regresar_V = new javax.swing.JToggleButton();
         jd_Carcel = new javax.swing.JDialog();
-        tb_mostrar = new javax.swing.JToggleButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_carcel = new javax.swing.JList<>();
         jd_Listar = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
@@ -301,40 +307,75 @@ public class Principal extends javax.swing.JFrame {
 
         jd_Carcel.setMinimumSize(new java.awt.Dimension(530, 420));
 
-        tb_mostrar.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
-        tb_mostrar.setText("Mostrar");
-        tb_mostrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_mostrarMouseClicked(evt);
-            }
-        });
+        jl_carcel.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_carcel);
 
         javax.swing.GroupLayout jd_CarcelLayout = new javax.swing.GroupLayout(jd_Carcel.getContentPane());
         jd_Carcel.getContentPane().setLayout(jd_CarcelLayout);
         jd_CarcelLayout.setHorizontalGroup(
             jd_CarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_CarcelLayout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addComponent(tb_mostrar)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jd_CarcelLayout.setVerticalGroup(
             jd_CarcelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_CarcelLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addComponent(tb_mostrar)
-                .addGap(333, 333, 333))
+            .addGroup(jd_CarcelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        jd_Listar.setMinimumSize(new java.awt.Dimension(700, 500));
+        jd_Listar.setPreferredSize(new java.awt.Dimension(700, 500));
+
+        jScrollPane1.setViewportView(jList1);
+
+        jToggleButton5.setText("jToggleButton5");
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Villanos");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("the dark avengers");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("the sinister six");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Heroes");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("the avengers");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("X-men");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(jTree1);
 
         javax.swing.GroupLayout jd_ListarLayout = new javax.swing.GroupLayout(jd_Listar.getContentPane());
         jd_Listar.getContentPane().setLayout(jd_ListarLayout);
         jd_ListarLayout.setHorizontalGroup(
             jd_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_ListarLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToggleButton5)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jd_ListarLayout.setVerticalGroup(
             jd_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_ListarLayout.createSequentialGroup()
+                .addGroup(jd_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_ListarLayout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jToggleButton5))
+                    .addGroup(jd_ListarLayout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(jd_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE))))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -433,7 +474,7 @@ public class Principal extends javax.swing.JFrame {
     private void jb_regresar_superMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresar_superMouseClicked
         // TODO add your handling code here:
         jd_SuperHeroes.setVisible(false);
-        dispose();
+        
         Principal p2 = new Principal();
         p2.setVisible(true);
     }//GEN-LAST:event_jb_regresar_superMouseClicked
@@ -449,11 +490,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void jb_agregar_VMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregar_VMouseClicked
         // TODO add your handling code here:
+        Villanos.add(new supervillano(tf_encarcelado.getText(), Integer.parseInt(tf_casualties.getText()), (Integer) sp_poder_v.getValue(), tf_nombe_v.getText(), Integer.parseInt(tf_edad_v.getText()), tf_planeta_v.getText(), Double.parseDouble(tf_altura.getText())));
+        Todos.add(Villanos);
         
-        Todos.add(Villanos.add(new supervillano(tf_encarcelado.getText(), Integer.parseInt(tf_casualties.getText()), (Integer) sp_poder_v.getValue(), tf_nombe_v.getText(), Integer.parseInt(tf_edad_v.getText()), tf_planeta_v.getText(), Double.parseDouble(tf_altura.getText()))));
-        for (supervillano Villano : Villanos) {
-            System.out.println(Villano);
-        }
         //
         sp_poder_v.setValue(0);
         tf_encarcelado.setText("");
@@ -464,16 +503,10 @@ public class Principal extends javax.swing.JFrame {
         tf_casualties.setText("");
     }//GEN-LAST:event_jb_agregar_VMouseClicked
 
-    private void tb_mostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_mostrarMouseClicked
-        // TODO add your handling code here:
-       
-
-    }//GEN-LAST:event_tb_mostrarMouseClicked
-
     private void jb_regresar_VMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresar_VMouseClicked
         // TODO add your handling code here:
         jd_SuperVillanos.setVisible(false);
-        dispose();
+        
         Principal p4 = new Principal();
         p4.setVisible(true);
     }//GEN-LAST:event_jb_regresar_VMouseClicked
@@ -485,7 +518,9 @@ public class Principal extends javax.swing.JFrame {
         dispose();
         jd_Carcel.setVisible(true);
         jd_Carcel.setLocationRelativeTo(this);
-
+        DefaultListModel modelo= (DefaultListModel) jl_carcel.getModel();
+        modelo.addElement(Villanos.get(0).getNombre());
+        jl_carcel.setModel(modelo);
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
@@ -541,10 +576,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JTree jTree1;
     private javax.swing.JButton jb_agregar;
     private javax.swing.JToggleButton jb_agregar_V;
     private javax.swing.JToggleButton jb_regresar_V;
@@ -553,9 +594,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_Listar;
     private javax.swing.JDialog jd_SuperHeroes;
     private javax.swing.JDialog jd_SuperVillanos;
+    private javax.swing.JList<String> jl_carcel;
     private javax.swing.JSpinner sp_poder;
     private javax.swing.JSpinner sp_poder_v;
-    private javax.swing.JToggleButton tb_mostrar;
     private javax.swing.JTextField tf_altura;
     private javax.swing.JTextField tf_altura_super;
     private javax.swing.JTextField tf_casualties;

@@ -47,7 +47,7 @@ public class supervillano extends info_general{
 
     @Override
     public String toString() {
-        return  "encarcelado=" + encarcelado + ", casualties=" + casualties + '}';
+        return  nombre;
     }
     
 }
